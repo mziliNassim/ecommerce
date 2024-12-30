@@ -22,7 +22,6 @@ const Categories = () => {
                       src={categorie.banner}
                       alt=""
                     />
-
                     <h5 className="mb-3 text-2xl uppercase font-bold tracking-tight text-gray-900 dark:text-white">
                       {categorie.title}
                     </h5>

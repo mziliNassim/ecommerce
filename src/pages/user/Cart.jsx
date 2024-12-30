@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Alert from "../../components/Alert";
+import Populaire from "../../components/home/Populaire";
+
 import {
   decrementProduct,
   incrementProduct,
@@ -12,6 +14,7 @@ import {
 } from "../../features/userSlice";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -52,7 +55,7 @@ const Cart = () => {
             Shopping Cart
           </h2>
 
-          <div className="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
+          <div className="my-6 sm:my-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
             <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
               <div className="space-y-6">
                 {cart.length > 0 ? (
@@ -212,13 +215,18 @@ const Cart = () => {
                   </dl>
                 </div>
 
-                <Link
-                  to="/payment"
+                {/* {payment.totalPrice !== 0 && (
+                  )} */}
+                <button
+                  onClick={() => navigate("/payment")}
+                  disabled={payment.totalPrice === 0}
                   className="flex capitalize w-full items-center justify-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  style={{ background: mainColor }}
+                  style={{
+                    background: payment.totalPrice ? mainColor : "#ccc",
+                  }}
                 >
                   payment
-                </Link>
+                </button>
 
                 <div className="flex items-center justify-center gap-2">
                   <Link
@@ -246,6 +254,10 @@ const Cart = () => {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="my-6 sm:my-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
+            <Populaire />
           </div>
         </div>
       </section>

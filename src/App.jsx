@@ -15,6 +15,7 @@ import Cart from "./pages/user/Cart";
 import Products from "./pages/Products";
 import Favorite from "./pages/Favorite";
 import Product from "./pages/Product";
+import Payment from "./pages/Payment.jsx";
 
 const App = () => {
   const { theme } = useSelector((state) => state.theme);
@@ -26,6 +27,7 @@ const App = () => {
           <NavBar />
           <Routes>
             <Route path="/" element=<Home /> />
+            <Route path="/payment" element=<Payment /> />
             <Route path="/product/:id" element=<Product /> />
 
             <Route path="/products">

@@ -18,7 +18,7 @@ const Product = () => {
       await axios
         .get("http://localhost:5000/products/" + id)
         .then((res) => setProduct(res.data))
-        .catch((err) => setError(err.message))
+        .catch((err) => setError("No product with id : " + id))
         .finally(() => setLoading(false));
     };
 
