@@ -1,8 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const { mainColor } = useSelector((state) => state.theme);
+
   return (
     <>
       <footer className="mt-auto bg-white shadow-top border-gray-200 dark:bg-gray-900 px-10">
@@ -12,8 +15,11 @@ const Footer = () => {
               to="/"
               className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
             >
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                E-commerce!
+              <span
+                style={{ color: mainColor }}
+                className="self-center text-4xl font-semibold whitespace-nowrap text-gray-900 dark:text-gray-100"
+              >
+                E-commerce-Redux!
               </span>
             </Link>
             <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">

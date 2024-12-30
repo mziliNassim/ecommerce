@@ -5,10 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../features/themeSlice";
 
 const NavBar = () => {
-  const [toggleDropdown, setToggleDropdown] = useState(false);
-
-  const { theme } = useSelector((state) => state.theme);
-  const { user, cart, favorite } = useSelector((state) => state.user);
+  const { theme, mainColor } = useSelector((state) => state.theme);
+  const { cart, favorite } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   return (
@@ -22,8 +20,11 @@ const NavBar = () => {
             to="/"
             className="flex items-center space-x-1 rtl:space-x-reverse"
           >
-            <span className="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 dark:text-gray-100 ">
-              E-commerce!
+            <span
+              style={{ color: mainColor }}
+              className="self-center text-4xl font-semibold whitespace-nowrap text-gray-900 dark:text-gray-100 "
+            >
+              E-commerce-Redux!
             </span>
           </Link>
 
@@ -78,7 +79,7 @@ const NavBar = () => {
                 <li>
                   <NavLink
                     to="/"
-                    className="block py-2 capitalize px-3 text-gray-700 rounded hover:bg-gray-200 md:hover:bg-transparent  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    className="block py-2 capitalize px-3 text-gray-700 rounded hover:bg-gray-200 md:hover:bg-transparent  md:p-0 dark:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                     aria-current="page"
                   >
                     Home
@@ -87,7 +88,7 @@ const NavBar = () => {
 
                 <li>
                   <NavLink
-                    className="block py-2 capitalize px-3 text-gray-700 rounded hover:bg-gray-200 md:hover:bg-transparent  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    className="block py-2 capitalize px-3 text-gray-700 rounded hover:bg-gray-200 md:hover:bg-transparent  md:p-0 dark:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                     to="/products"
                   >
                     Products
@@ -95,7 +96,7 @@ const NavBar = () => {
                 </li>
                 <li>
                   <NavLink
-                    className="block relative py-2 capitalize px-3 text-gray-700 rounded hover:bg-gray-200 md:hover:bg-transparent  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    className="block py-2 capitalize px-3 text-gray-700 rounded hover:bg-gray-200 md:hover:bg-transparent  md:p-0 dark:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                     to="/favorite"
                   >
                     favorite
@@ -108,7 +109,7 @@ const NavBar = () => {
                 </li>
                 <li>
                   <NavLink
-                    className="block relative py-2 capitalize px-3 text-gray-700 rounded hover:bg-gray-200 md:hover:bg-transparent  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    className="block py-2 capitalize px-3 text-gray-700 rounded hover:bg-gray-200 md:hover:bg-transparent  md:p-0 dark:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                     to="/user/cart"
                   >
                     <i className="bi bi-cart text-lg"></i>
