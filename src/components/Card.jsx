@@ -41,7 +41,7 @@ const Card = ({ product }) => {
             <img
               className="rounded mb-3"
               loading="lazy"
-              src={`http://localhost:5173/img/products/${product.picture}`}
+              src={`../img/products/${product.picture}`}
               alt=""
             />
 

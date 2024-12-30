@@ -65,7 +65,7 @@ const Cart = () => {
                         <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
                           <img
                             className="h-32 w-32 rounded-md"
-                            src={`http://localhost:5173/img/products/${product.picture}`}
+                            src={`../img/products/${product.picture}`}
                             alt="imac image"
                           />
 

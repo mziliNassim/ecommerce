@@ -55,7 +55,7 @@ const Product = () => {
                     <img
                       className="w-full h-full object-cover rounded-md shadow-md"
                       loading="lazy"
-                      src={`http://localhost:5173/img/products/${product.picture}`}
+                      src={`../img/products/${product.picture}`}
                       alt="Product Image"
                     />
                   </div>
