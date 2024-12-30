@@ -11,14 +11,14 @@ const Categories = () => {
   return (
     <>
       <section className="bg-white overflow-y-hidden dark:bg-gray-900 md:mt-0">
-        <div className="grid max-w-screen-xl px-4 pt-0 pb-8 mx-auto gap-5 lg:gap-8 xl:gap-10 lg:py-16 lg:grid-cols-12 lg:pt-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 max-w-screen-xl px-4 pt-0 pb-8 mx-auto gap-5 lg:gap-8 xl:gap-10 lg:py-16  lg:pt-0">
           {categories?.map((categorie, i) => {
             return (
-              <div key={i} className="mr-auto place-self-center lg:col-span-3">
-                <div className="flex flex-col justify-between p-5 hover:rounded bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-transparent hover:scale-105 transition-all">
+              <div key={i} className="h-full">
+                <div className="flex h-full flex-col justify-between p-3 hover:rounded bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-transparent hover:scale-105 transition-all">
                   <div className="">
                     <img
-                      className="rounded mb-3"
+                      className="rounded mb-3 w-full h-[200px]"
                       src={categorie.banner}
                       alt=""
                     />

@@ -5,7 +5,7 @@ const userSlice = createSlice({
   initialState: {
     user: null,
     cart: [],
-    favorite: [2, 4],
+    favorite: ["1", "5", "10"],
     loading: false,
     error: null,
   },

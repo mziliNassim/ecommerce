@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
+
+import { Link } from "react-router-dom";
+import Alert from "../../components/Alert";
 import {
   decrementProduct,
   incrementProduct,
   remouveProduct,
   toggleFavorite,
 } from "../../features/userSlice";
-import { Link } from "react-router-dom";
 
 const Cart = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
   const [payment, setPayment] = useState({
     originalPrice: 0,
     saving: 0,
@@ -59,7 +65,7 @@ const Cart = () => {
                         <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
                           <img
                             className="h-32 w-32 rounded-md"
-                            src={product.picture}
+                            src={`http://localhost:5173/img/products/${product.picture}`}
                             alt="imac image"
                           />
 
@@ -81,14 +87,15 @@ const Cart = () => {
                                 <i class="bi bi-dash text-gray-900 dark:text-white"></i>
                               </button>
 
-                              <span className="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white">
-                                {product.count}
+                              <span className="mx-4 w-fit min-w-14 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white">
+                                {product.count} / {product.avilable}
                               </span>
 
                               <button
                                 type="button"
                                 id="increment-button"
                                 onClick={() =>
+                                  product.count < product.avilable &&
                                   dispatch(incrementProduct(product.id))
                                 }
                                 data-input-counter-increment="counter-input"
@@ -128,7 +135,7 @@ const Cart = () => {
                                       ? "#FFD700"
                                       : "#ddd",
                                   }}
-                                  className="bi bi-star-fill me-1.5 h-5 w-5"
+                                  className="bi bi-star-fill me-1.5 text-lg"
                                 ></i>
                                 {favorite.includes(product.id)
                                   ? "Remouve from Favorite"
@@ -143,23 +150,7 @@ const Cart = () => {
                                 type="button"
                                 className="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500"
                               >
-                                <svg
-                                  className="me-1.5 h-5 w-5"
-                                  aria-hidden="true"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="24"
-                                  height="24"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <path
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M6 18 17.94 6M18 18 6.06 6"
-                                  />
-                                </svg>
+                                <i class="bi bi-x text-2xl"></i>
                                 Remove
                               </button>
                             </div>
@@ -169,27 +160,7 @@ const Cart = () => {
                     );
                   })
                 ) : (
-                  <>
-                    <div
-                      id="alert-border-1"
-                      className="flex items-center p-4 mb-4 border-t-4 bg-gray-100 dark:bg-gray-800"
-                      style={{ borderColor: mainColor, color: mainColor }}
-                      role="alert"
-                    >
-                      <i className="bi bi-info-circle-fill"></i>
-
-                      <div className="ms-3 text-sm font-medium">
-                        Your cart is currently empty. Start exploring our
-                        collection and add your favorite items to the cart.{" "}
-                        <Link
-                          to="/products"
-                          className="font-semibold underline hover:no-underline"
-                        >
-                          Shop now
-                        </Link>
-                      </div>
-                    </div>
-                  </>
+                  <Alert msg="Your cart is currently empty. Start exploring our collection and add your favorite items to the cart." />
                 )}
               </div>
             </div>

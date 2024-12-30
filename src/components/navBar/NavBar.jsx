@@ -84,14 +84,7 @@ const NavBar = () => {
                     Home
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink
-                    className="block py-2 capitalize px-3 text-gray-700 rounded hover:bg-gray-200 md:hover:bg-transparent  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                    to="/about"
-                  >
-                    about
-                  </NavLink>
-                </li>
+
                 <li>
                   <NavLink
                     className="block py-2 capitalize px-3 text-gray-700 rounded hover:bg-gray-200 md:hover:bg-transparent  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"

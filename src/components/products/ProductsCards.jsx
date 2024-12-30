@@ -1,25 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Card from "../Card";
+import Error from "../Alert";
 
-const ProductsCards = ({ categorie, products }) => {
-  const [filterdProducts, setFilterdProducts] = useState(products);
-
-  useEffect(() => {
-    if (!categorie) setFilterdProducts(products);
-    else {
-      setFilterdProducts(
-        products.filter((product) => product.categorie === categorie)
-      );
-    }
-  }, [categorie, products]);
-
+const ProductsCards = ({ products }) => {
   return (
     <>
       <div className="grid grid-cols-4 gap-4">
-        {filterdProducts &&
-          filterdProducts.map((product, i) => {
-            return <Card key={i} product={product} />;
-          })}
+        {products?.length ? (
+          products.map((product, i) => <Card key={i} product={product} />)
+        ) : (
+          <Error msg="No products" />
+        )}
       </div>
     </>
   );

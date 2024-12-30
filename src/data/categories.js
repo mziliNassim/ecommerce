@@ -1,25 +1,28 @@
-import banner1 from "../img/home/banner_1.jpg";
-import banner2 from "../img/home/banner_2.jpg";
-import banner3 from "../img/home/banner_3.jpg";
+
+import categorie_women from "../img/categories/categorie_women.jpg";
+import categorie_men from "../img/categories/categorie_men.jpg";
+import categorie_kids from "../img/categories/categorie_kids.jpg";
+import categorie_accessoire from "../img/categories/categorie_accessoire.jpg";
+
 export const categories = [
   {
     title: "women",
     desc: "Discover elegant women's fashion for every occasion - from casual daywear to stunning evening pieces",
-    banner: banner1,
+    banner: categorie_women,
   },
   {
     title: "men",
     desc: "Elevate your style with our premium selection of modern menswear essentials and trending pieces",
-    banner: banner3,
+    banner: categorie_men,
   },
   {
     title: "kids",
     desc: "Delight in our charming collection of kids' fashion, combining comfort, durability, and playful designs for every adventure.",
-    banner: banner1,
+    banner: categorie_kids,
   },
   {
     title: "accessories",
     desc: "Complete your look with our curated collection of contemporary accessories and statement pieces",
-    banner: banner2,
+    banner: categorie_accessoire,
   },
 ];

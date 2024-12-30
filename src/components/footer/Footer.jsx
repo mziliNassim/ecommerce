@@ -25,20 +25,21 @@ const Footer = () => {
                   home
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/about"
-                  className="hover:underline  capitalize me-4 md:me-6"
-                >
-                  About
-                </Link>
-              </li>
+
               <li>
                 <Link
                   to="/products"
                   className="hover:underline capitalize me-4 md:me-6"
                 >
                   products
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/favorite"
+                  className="hover:underline capitalize me-4 md:me-6"
+                >
+                  favorite
                 </Link>
               </li>
               <li>
