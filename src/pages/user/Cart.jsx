@@ -14,7 +14,6 @@ import {
 } from "../../features/userSlice";
 
 const Cart = () => {
-  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -27,8 +26,9 @@ const Cart = () => {
   });
 
   const { mainColor } = useSelector((state) => state.theme);
-  const { cart, favorite } = useSelector((state) => state.user);
+  const { user, cart, favorite } = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     let price = 0;
@@ -42,12 +42,14 @@ const Cart = () => {
       originalPrice: price,
       totalPrice: price - price * (payment.discount / 100),
     });
+
+    if (!user) navigate("/auth/login");
   }, [cart]);
 
   return (
     <>
-      <section className="bg-white overflow-y-hidden dark:bg-gray-900 my-7 py-7 md:pt-3 md:mt-0">
-        <div className=" max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-0 lg:grid-cols-12 lg:pt-28">
+      <section className="overflow-y-hidden bg-white dark:bg-gray-900 my-7 py-7 md:pt-3 md:mt-0">
+        <div className="max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-0 lg:grid-cols-12 lg:pt-28">
           <h2
             style={{ color: mainColor }}
             className="text-xl font-semibold text-gray-900 dark:text-white sm:text-4xl"
@@ -56,18 +58,18 @@ const Cart = () => {
           </h2>
 
           <div className="my-6 sm:my-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
-            <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
+            <div className="flex-none w-full mx-auto lg:max-w-2xl xl:max-w-4xl">
               <div className="space-y-6">
                 {cart.length > 0 ? (
                   cart.map((product, i) => {
                     return (
                       <div
                         key={i}
-                        className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-6"
+                        className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-6"
                       >
                         <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
                           <img
-                            className="h-32 w-32 rounded-md"
+                            className="w-32 h-32 rounded-md"
                             src={`../img/products/${product.picture}`}
                             alt="imac image"
                           />
@@ -85,12 +87,12 @@ const Cart = () => {
                                 }
                                 id="decrement-button"
                                 data-input-counter-decrement="counter-input"
-                                className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                                className="inline-flex items-center justify-center w-5 h-5 bg-gray-100 border border-gray-300 rounded-md shrink-0 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
                               >
                                 <i class="bi bi-dash text-gray-900 dark:text-white"></i>
                               </button>
 
-                              <span className="mx-4 w-fit min-w-14 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0 dark:text-white">
+                              <span className="mx-4 text-sm font-medium text-center text-gray-900 bg-transparent border-0 w-fit min-w-14 shrink-0 focus:outline-none focus:ring-0 dark:text-white">
                                 {product.count} / {product.avilable}
                               </span>
 
@@ -102,7 +104,7 @@ const Cart = () => {
                                   dispatch(incrementProduct(product.id))
                                 }
                                 data-input-counter-increment="counter-input"
-                                className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+                                className="inline-flex items-center justify-center w-5 h-5 bg-gray-100 border border-gray-300 rounded-md shrink-0 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700"
                               >
                                 <i class="bi bi-plus text-gray-900 dark:text-white"></i>
                               </button>
@@ -115,7 +117,7 @@ const Cart = () => {
                             </div>
                           </div>
 
-                          <div className="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
+                          <div className="flex-1 w-full min-w-0 space-y-4 md:order-2 md:max-w-md">
                             <p className="text-lg font-medium text-gray-900 hover:underline dark:text-white">
                               {product.title}
                             </p>
@@ -169,8 +171,8 @@ const Cart = () => {
             </div>
 
             {/* Paymeny && total */}
-            <div className="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
-              <div className="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6">
+            <div className="flex-1 max-w-4xl mx-auto mt-6 space-y-6 lg:mt-0 lg:w-full">
+              <div className="p-4 space-y-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6">
                 <p className="text-xl font-semibold text-gray-900 dark:text-white">
                   Payment
                 </p>
@@ -205,7 +207,7 @@ const Cart = () => {
                     </dl>
                   </div>
 
-                  <dl className="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700">
+                  <dl className="flex items-center justify-between gap-4 pt-2 border-t border-gray-200 dark:border-gray-700">
                     <dt className="text-base font-bold text-gray-900 dark:text-white">
                       Total
                     </dt>
@@ -236,7 +238,7 @@ const Cart = () => {
                   >
                     Continue Shopping
                     <svg
-                      className="h-5 w-5"
+                      className="w-5 h-5"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

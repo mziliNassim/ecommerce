@@ -2,16 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
   name: "user",
-  initialState: {
-    user: null,
-    cart: [],
-    favorite: ["1", "5", "10"],
-    loading: false,
-    error: null,
-  },
+  initialState: { user: null, cart: [], favorite: [] },
   reducers: {
     setUser: (state, action) => {
       state.user = action.payload;
+    },
+    setLogout: (state) => {
+      state.user = null;
+      state.cart = [];
+      state.favorite = [];
     },
     setCart: (state, action) => {
       const productIndex = state.cart.findIndex(
@@ -58,6 +57,7 @@ const userSlice = createSlice({
 
 export const {
   setUser,
+  setLogout,
   setCart,
   decrementProduct,
   incrementProduct,

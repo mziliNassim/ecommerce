@@ -30,9 +30,9 @@ const Populaire = () => {
 
   return (
     <>
-      <section className="bg-white overflow-y-hidden dark:bg-gray-900 md:mt-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 max-w-screen-xl px-4 pt-0 pb-8 mx-auto gap-5 lg:gap-8 xl:gap-y-10 lg:py-16  lg:pt-0">
-          <h1 className="text-4xl sm:col-span-2 md:col-span-3 lg:col-span-5 my-3 font-bold">
+      <section className="overflow-y-hidden bg-white dark:bg-gray-900 md:mt-10">
+        <div className="grid max-w-screen-xl grid-cols-1 gap-5 px-4 pt-0 pb-8 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 lg:gap-8 xl:gap-y-10 lg:py-16 lg:pt-0">
+          <h1 className="my-3 text-4xl font-bold sm:col-span-2 md:col-span-3 lg:col-span-5">
             Our Popular Products
           </h1>
 
@@ -44,7 +44,7 @@ const Populaire = () => {
                 return <Card key={i} product={product} />;
               })}
 
-              <div className="sm:col-span-2 md:col-span-3 lg:col-span-5 flex items-center justify-end w-full">
+              <div className="flex items-center justify-end w-full sm:col-span-2 md:col-span-3 lg:col-span-5">
                 <Link
                   to="/products"
                   className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"

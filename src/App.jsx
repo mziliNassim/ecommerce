@@ -3,8 +3,8 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 
-// import Login from "./pages/auth/Login";
-// import Register from "./pages/auth/Registrer";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Registrer";
 
 import NavBar from "./components/navBar/NavBar";
 import Footer from "./components/footer/Footer";
@@ -32,7 +32,7 @@ const App = () => {
   return (
     <>
       <div className={theme}>
-        <div className="min-h-screen overflow-x-hidden w-full flex flex-col justify-between bg-white text-black dark:text-white dark:bg-gray-900">
+        <div className="flex flex-col justify-between w-full min-h-screen overflow-x-hidden text-black bg-white dark:text-white dark:bg-gray-900">
           <NavBar />
           <Routes>
             <Route path="/" element=<Home /> />
@@ -49,10 +49,10 @@ const App = () => {
               <Route path=":categorie" element=<Favorite /> />
             </Route>
 
-            {/* <Route path="/auth">
-                <Route path="login" element=<Login /> />
-                <Route path="register" element=<Register /> />
-              </Route> */}
+            <Route path="/auth">
+              <Route path="login" element=<Login /> />
+              <Route path="register" element=<Register /> />
+            </Route>
 
             <Route path="/user">
               <Route path="cart" element=<Cart /> />

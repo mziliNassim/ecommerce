@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 
@@ -15,7 +15,8 @@ const Favorite = () => {
 
   const { categorie } = useParams();
 
-  const { favorite } = useSelector((state) => state.user);
+  const { user, favorite } = useSelector((state) => state.user);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -40,11 +41,14 @@ const Favorite = () => {
 
     setLoading(true);
     fetchProducts();
+
+    //
+    if (!user) navigate("/auth/login");
   }, [categorie, favorite]);
 
   return (
     <>
-      <section className="bg-white overflow-y-hidden dark:bg-gray-900 mt-7 md:mt-0">
+      <section className="overflow-y-hidden bg-white dark:bg-gray-900 mt-7 md:mt-0">
         <div className="max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:pt-28">
           <Filter categorie={categorie} />
 
