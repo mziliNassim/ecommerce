@@ -13,6 +13,12 @@ dist-ssr
 test
 *.local
 
+# server
+server/node_modules
+server/.env
+server/app.bat
+
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -1,0 +1,173 @@
+[
+  {
+    "id": "1",
+    "avilable": 21,
+    "title": "Premium Leather Belt",
+    "desc": "Stylish and durable genuine leather belt with a classic buckle design, perfect for elevating any outfit. Ideal for casual and formal wear.",
+    "picture": "belt.jpg",
+    "categorie": "accessories",
+    "price": 89.99
+  },
+  {
+    "id": "2",
+    "avilable": 0,
+    "title": "Kawaii Strawberry Sweatshirt",
+    "desc": "Cute and cozy sweatshirt with pastel pink sleeves and a fun strawberry print. Perfect for casual outings or lounging at home, featuring playful Japanese text for a trendy look.",
+    "picture": "clothes-1.jpg",
+    "categorie": "women",
+    "price": 49.99
+  },
+  {
+    "id": "3",
+    "avilable": 33,
+    "title": "Men's Brown Leather Dress Shoes",
+    "desc": "These stylish men's dress shoes combine classic design with modern comfort. The brown leather upper features a subtle textured pattern, and the lace-up closure ensures a secure and comfortable fit. Perfect for formal occasions or business settings.",
+    "picture": "shoe-1.jpg",
+    "categorie": "men",
+    "price": 79.99
+  },
+  {
+    "id": "4",
+    "avilable": 0,
+    "title": "Two-Piece Set with Contrast Trim",
+    "desc": "This stylish two-piece set features a peach-colored short-sleeve t-shirt and matching shorts, both with black contrast trim. Perfect for a casual and comfortable look.",
+    "picture": "shorts-1.jpg",
+    "categorie": "kids",
+    "price": 24.99
+  },
+  {
+    "id": "5",
+    "avilable": 11,
+    "title": "Elegant Ruby and Diamond Necklace",
+    "desc": "This exquisite necklace features a stunning interplay of shimmering diamonds and rich red rubies. The delicate design and luxurious materials make it a perfect choice for special occasions.",
+    "picture": "jewellery-3.jpg",
+    "categorie": "accessories",
+    "price": 29.99
+  },
+  {
+    "id": "6",
+    "avilable": 21,
+    "title": "Pink Tie-Front Crop Top",
+    "desc": "Trendy and stylish pink crop top with a tie-front detail and sporty white stripe accents on the sleeves. Perfect for casual outings and summer vibes.",
+    "picture": "clothes-2.jpg",
+    "categorie": "women",
+    "price": 299.99
+  },
+  {
+    "id": "7",
+    "avilable": 18,
+    "title": "Elegant Black A-Line Skirt with Gold Accents",
+    "desc": "This sophisticated black A-line skirt features a unique gold embellished waistband and a charming gold charm detail. The flowing fabric creates a flattering silhouette, perfect for special occasions or adding a touch of glamour to your everyday style.",
+    "picture": "clothes-3.jpg",
+    "categorie": "women",
+    "price": 69.99
+  },
+  {
+    "id": "8",
+    "avilable": 2,
+    "title": "Classic Black Circle Skirt",
+    "desc": "A timeless and versatile black circle skirt, perfect for dancing, twirling, or adding a touch of retro flair to your outfit. Made from a smooth, comfortable fabric.",
+    "picture": "clothes-4.jpg",
+    "categorie": "women",
+    "price": 99.99
+  },
+  {
+    "id": "9",
+    "avilable": 15,
+    "title": "Luxurious Amber Perfume",
+    "desc": "Indulge in the captivating allure of this luxurious amber perfume. The exquisite bottle reflects the rich, sophisticated scent within, a perfect addition to any vanity.",
+    "picture": "perfume.jpg",
+    "categorie": "accessories",
+    "price": 39.99
+  },
+  {
+    "id": "10",
+    "avilable": 10,
+    "title": "Classic Canvas Chore Coat",
+    "desc": "A timeless chore coat crafted from durable canvas. Featuring a corduroy collar, plaid lining, and multiple pockets, this jacket offers both style and functionality. Perfect for everyday wear or outdoor activities.",
+    "picture": "jacket-1.jpg",
+    "categorie": "men",
+    "price": 59.99
+  },
+  {
+    "id": "11",
+    "avilable": 8,
+    "title": "Durable Canvas Shirt Jacket - Olive Green",
+    "desc": "This durable canvas shirt jacket in olive green is perfect for outdoor adventures. Featuring a warm plaid flannel lining, and multiple pockets. The rugged design ensures long-lasting wear.",
+    "picture": "jacket-3.jpg",
+    "categorie": "men",
+    "price": 34.99
+  },
+  {
+    "id": "12",
+    "avilable": 7,
+    "title": "Men's Classic Camel Double-Breasted Coat",
+    "desc": "This sophisticated double-breasted coat in classic camel features a timeless design and high-quality construction. Perfect for adding a touch of elegance to any outfit.",
+    "picture": "jacket-5.jpg",
+    "categorie": "men",
+    "price": 44.99
+  },
+  {
+    "id": "13",
+    "avilable": 2,
+    "title": "Teal and Gold Floral Jhumka Earrings",
+    "desc": "These elegant Jhumka earrings feature a beautiful teal enamel base adorned with intricate gold floral detailing and sparkling gemstones. The unique crescent moon shape adds a touch of modern flair to this traditional design.",
+    "picture": "jewellery-1.jpg",
+    "categorie": "accessories",
+    "price": 59.99
+  },
+  {
+    "id": "14",
+    "avilable": 16,
+    "title": "Exceptional Multi-Colored Diamond Ring",
+    "desc": "A breathtaking ring featuring a stunning array of fancy colored diamonds—pink, blue, and yellow—set in platinum and rose gold. The intricate design showcases the exceptional brilliance and rarity of these exquisite gemstones. A truly one-of-a-kind masterpiece.",
+    "picture": "jewellery-2.jpg",
+    "categorie": "accessories",
+    "price": 119.99
+  },
+  {
+    "id": "15",
+    "avilable": 23,
+    "title": "Old Spice Swagger Hair Styling Kit",
+    "desc": "The Old Spice Swagger Hair Styling Kit gives you everything you need to achieve the perfect look. This kit includes Swagger 2-in-1 shampoo and conditioner, Swagger Gel for ultimate hold and shine, and Fiber Wax for added texture and control.",
+    "picture": "shampoo.jpg",
+    "categorie": "women",
+    "price": 49.99
+  },
+  {
+    "id": "16",
+    "avilable": 32,
+    "title": "Men's Asymmetrical Collar Long Sleeve Shirt",
+    "desc": "This stylish long-sleeve shirt features a unique asymmetrical collar and hemline, adding a modern twist to classic button-down design. Perfect for creating a sophisticated and edgy look. The navy blue color is versatile and easy to style.",
+    "picture": "shirt-1.jpg",
+    "categorie": "men",
+    "price": 69.99
+  },
+  {
+    "id": "17",
+    "avilable": 1,
+    "title": "Nike Women's Golf Shoe - White",
+    "desc": "Elevate your game with these stylish and high-performance Nike golf shoes. The sleek white design offers a sophisticated look, while the innovative outsole provides exceptional traction and stability on the course. Experience comfort and performance in one.",
+    "picture": "sports-1.jpg",
+    "categorie": "women",
+    "price": 129.99
+  },
+  {
+    "id": "18",
+    "avilable": 5,
+    "title": "Men's Brown Leather Boots",
+    "desc": "These durable and stylish men's leather boots are perfect for everyday wear. The rich brown leather and classic lace-up design offer both comfort and rugged good looks. Ideal for various occasions and weather conditions.",
+    "picture": "shoe-4.jpg",
+    "categorie": "men",
+    "price": 149.99
+  },
+  {
+    "id": "19",
+    "avilable": 8,
+    "title": "Wolftrack Cycling Shoe",
+    "desc": "High-performance cycling shoe with Boa closure system, durable outsole, and waterproof upper. Perfect for gravel and winter riding.",
+    "picture": "sports-2.jpg",
+    "categorie": "kids",
+    "price": 34.99
+  }
+]
