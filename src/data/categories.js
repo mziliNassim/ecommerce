@@ -1,4 +1,3 @@
-
 import categorie_women from "../img/categories/categorie_women.jpg";
 import categorie_men from "../img/categories/categorie_men.jpg";
 import categorie_kids from "../img/categories/categorie_kids.jpg";
