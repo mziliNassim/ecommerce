@@ -42,13 +42,13 @@ E-commerce website built using React, Redux, and other modern web technologies. 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/mziliNassim/redux-ecom
+   git clone https://github.com/mziliNassim/ecommerce.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd redux-ecom
+   cd ecommerce
    ```
 
 3. Install the Frontend dependencies:
