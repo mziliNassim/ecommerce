@@ -4,6 +4,7 @@
 
 - [Preview](#preview)
 - [Description du projet](#description-du-projet)
+- [Features](#features)
 - [Technologie Utilisé](#technologie-utilisé)
 - [Installation et Utilisation](#installation-et-utilisation)
   - [Installation](#installation)
@@ -18,6 +19,18 @@ Discover the live demo [here](https://ecommerce.nassim.online/)
 ## Description du projet
 
 E-commerce website built using React, Redux, and other modern web technologies. The website allows users to browse products, add them to their cart, and make purchases. It also includes features like user authentication, product filtering, and sorting. The project is designed to be responsive and user-friendly. The website is hosted on Netlify and can be accessed [here](https://ecommerce.nassim.online/).
+
+## Features
+
+- User authentication (register, login, and logout).
+
+- Product browsing with detailed product pages.
+
+- Shopping cart functionality.
+
+- Product filtering and sorting by categories.
+
+- Responsive design for seamless use on mobile, tablet, and desktop devices.
 
 ## Technologie Utilisé
 
@@ -78,5 +91,3 @@ E-commerce website built using React, Redux, and other modern web technologies. 
    ```
 
 2. Open your browser and navigate to `http://localhost:5173/` to view the website.
-
-##
