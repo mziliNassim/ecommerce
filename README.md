@@ -75,6 +75,8 @@ E-commerce website built using React, Redux, and other modern web technologies. 
 
    ```bash
    cd server
+   echo "PORT=5000" > .env
+
    npm install
    ```
 
